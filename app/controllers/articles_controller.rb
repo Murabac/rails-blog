@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  before_action :require_login, only: [:new, :create, :edit, :update]
   include ArticlesHelper #this helper lets us verify what the user has sent to us
 
   #This is what the app will send back when a user requests http://localhost:3000/articles/
